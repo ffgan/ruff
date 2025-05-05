@@ -338,7 +338,7 @@ declare_lint! {
 
 declare_lint! {
     /// ## What it does
-    /// Checks for invalidly defined protocol classes.
+    /// Checks for protocol classes that will raise `TypeError` at runtime.
     ///
     /// ## Why is this bad?
     /// An invalidly defined protocol class may lead to the type checker inferring
