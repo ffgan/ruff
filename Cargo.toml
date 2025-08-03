@@ -147,7 +147,7 @@ salsa = { git = "https://github.com/salsa-rs/salsa.git", rev = "86ca4a9d70e97dd5
     "salsa_unstable",
     "inventory",
 ] }
-schemars = { version = "0.8.16" }
+schemars = { version = "1.0.0" }
 seahash = { version = "4.1.0" }
 serde = { version = "1.0.197", features = ["derive"] }
 serde-wasm-bindgen = { version = "0.6.4" }
