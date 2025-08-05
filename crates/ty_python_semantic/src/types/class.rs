@@ -23,7 +23,10 @@ use crate::types::infer::nearest_enclosing_class;
 use crate::types::signatures::{CallableSignature, Parameter, Parameters, Signature};
 use crate::types::tuple::TupleSpec;
 use crate::types::{
-    declaration_type, infer_definition_types, todo_type, BareTypeAliasType, Binding, BoundSuperError, BoundSuperType, CallableType, DataclassParams, DeprecatedInstance, KnownInstanceType, NominalInstanceType, TypeAliasType, TypeMapping, TypeRelation, TypeTransformer, TypeVarBoundOrConstraints, TypeVarInstance, TypeVarKind
+    BareTypeAliasType, Binding, BoundSuperError, BoundSuperType, CallableType, DataclassParams,
+    DeprecatedInstance, KnownInstanceType, NominalInstanceType, TypeAliasType, TypeMapping,
+    TypeRelation, TypeTransformer, TypeVarBoundOrConstraints, TypeVarInstance, TypeVarKind,
+    declaration_type, infer_definition_types, todo_type,
 };
 use crate::{
     Db, FxIndexMap, FxOrderSet, Program,

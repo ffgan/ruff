@@ -220,9 +220,10 @@ impl<'db> Completion<'db> {
                 }
                 // This is a little weird for "struct." I'm mostly interpreting
                 // "struct" here as a more general "object." ---AG
-                Type::NominalInstance(_) | Type::PropertyInstance(_) | Type::BoundSuper(_) | Type::TypedDict(_)=> {
-                    CompletionKind::Struct
-                }
+                Type::NominalInstance(_)
+                | Type::PropertyInstance(_)
+                | Type::BoundSuper(_)
+                | Type::TypedDict(_) => CompletionKind::Struct,
                 Type::IntLiteral(_)
                 | Type::BooleanLiteral(_)
                 | Type::TypeIs(_)
