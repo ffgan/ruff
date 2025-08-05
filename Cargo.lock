@@ -1162,8 +1162,7 @@ dependencies = [
 [[package]]
 name = "get-size-derive2"
 version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ca171f9f8ed2f416ac044de2dc4acde3e356662a14ac990345639653bdc7fc28"
+source = "git+https://github.com/ibraheemdev/get-size2?branch=ibraheem%2Fnon-static-tracked#f0c31841a9feba2f83031216a92a46b04fd15a58"
 dependencies = [
  "attribute-derive",
  "quote",
@@ -1173,8 +1172,7 @@ dependencies = [
 [[package]]
 name = "get-size2"
 version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "965bc5c1c5fe05c5bbd398bb9b3f0f14d750261ebdd1af959f2c8a603fedb5ad"
+source = "git+https://github.com/ibraheemdev/get-size2?branch=ibraheem%2Fnon-static-tracked#f0c31841a9feba2f83031216a92a46b04fd15a58"
 dependencies = [
  "compact_str",
  "get-size-derive2",
@@ -2874,6 +2872,7 @@ dependencies = [
  "ruff_annotate_snippets",
  "ruff_cache",
  "ruff_diagnostics",
+ "ruff_memory_usage",
  "ruff_notebook",
  "ruff_python_ast",
  "ruff_python_parser",
@@ -3066,6 +3065,13 @@ dependencies = [
  "quote",
  "ruff_python_trivia",
  "syn",
+]
+
+[[package]]
+name = "ruff_memory_usage"
+version = "0.0.0"
+dependencies = [
+ "get-size2",
 ]
 
 [[package]]
@@ -4255,6 +4261,7 @@ dependencies = [
  "ruff_cache",
  "ruff_db",
  "ruff_macros",
+ "ruff_memory_usage",
  "ruff_options_metadata",
  "ruff_python_ast",
  "ruff_python_formatter",
@@ -4296,6 +4303,7 @@ dependencies = [
  "ruff_db",
  "ruff_index",
  "ruff_macros",
+ "ruff_memory_usage",
  "ruff_python_ast",
  "ruff_python_literal",
  "ruff_python_parser",
