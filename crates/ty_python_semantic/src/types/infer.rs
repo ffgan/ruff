@@ -9298,7 +9298,11 @@ impl<'db> TypeInferenceBuilder<'db, '_> {
                             TypeAndQualifiers::new(Type::unknown(), TypeQualifiers::INIT_VAR)
                         }
                         _ => name_expr_ty
-                            .in_type_expression(self.db(), self.scope())
+                            .in_type_expression(
+                                self.db(),
+                                self.scope(),
+                                self.legacy_typevar_binding_context,
+                            )
                             .unwrap_or_else(|error| {
                                 error.into_fallback_type(
                                     &self.context,
@@ -9517,7 +9521,11 @@ impl<'db> TypeInferenceBuilder<'db, '_> {
             ast::Expr::Name(name) => match name.ctx {
                 ast::ExprContext::Load => self
                     .infer_name_expression(name)
-                    .in_type_expression(self.db(), self.scope())
+                    .in_type_expression(
+                        self.db(),
+                        self.scope(),
+                        self.legacy_typevar_binding_context,
+                    )
                     .unwrap_or_else(|error| {
                         error.into_fallback_type(
                             &self.context,
@@ -9534,7 +9542,11 @@ impl<'db> TypeInferenceBuilder<'db, '_> {
             ast::Expr::Attribute(attribute_expression) => match attribute_expression.ctx {
                 ast::ExprContext::Load => self
                     .infer_attribute_expression(attribute_expression)
-                    .in_type_expression(self.db(), self.scope())
+                    .in_type_expression(
+                        self.db(),
+                        self.scope(),
+                        self.legacy_typevar_binding_context,
+                    )
                     .unwrap_or_else(|error| {
                         error.into_fallback_type(
                             &self.context,
@@ -10220,7 +10232,11 @@ impl<'db> TypeInferenceBuilder<'db, '_> {
                             generic_context,
                         );
                         specialized_class
-                            .in_type_expression(self.db(), self.scope())
+                            .in_type_expression(
+                                self.db(),
+                                self.scope(),
+                                self.legacy_typevar_binding_context,
+                            )
                             .unwrap_or(Type::unknown())
                     }
                     None => {
